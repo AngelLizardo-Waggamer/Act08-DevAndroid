@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="Red">#FFC97B63</color>
+    <color name="Finished_Green">#FF6A8A82</color>
+    <color name="Mint_cream">#FFF1F7ED</color>
+    <color name="Dark_slate_gray">#FF243E36</color>
+    <color name="Cambridge_blue">#FF7CA982</color>
+    <color name="Nyanza">#FFE0EEC6</color>
+    <color name="Old_gold">#FFC2A83E</color>
+</resources>
