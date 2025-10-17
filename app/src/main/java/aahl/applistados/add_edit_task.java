@@ -26,6 +26,8 @@ import aahl.applistados.Utils.TaskStateParser;
 public class add_edit_task extends AppCompatActivity {
 
     private TextView labelTitle;
+    private TextView labelErrorTituloTask;
+    private TextView labelErrorDescripcionTask;
     private TextInputEditText textInputNombreTask;
     private TextInputEditText textInputDescripcionTask;
     private Button btnGuardarTask;
@@ -44,6 +46,8 @@ public class add_edit_task extends AppCompatActivity {
         textInputDescripcionTask = findViewById(R.id.textInputDescripcionTask);
         btnGuardarTask = findViewById(R.id.btnGuardarTask);
         btnBorrarTask = findViewById(R.id.btnBorrarTask);
+        labelErrorTituloTask = findViewById(R.id.LabelErrorTituloTask);
+        labelErrorDescripcionTask = findViewById(R.id.LabelErrorDescriptionTask);
 
         spinnerTaskState = findViewById(R.id.spinnerTaskState);
         setupInicialSpinner();
@@ -96,12 +100,18 @@ public class add_edit_task extends AppCompatActivity {
         TaskState spinnerResult = TaskStateParser.reverseParsingState(spinnerTaskState.getSelectedItem().toString());
 
         if (taskName.isEmpty()) {
-            textInputNombreTask.setError("Este campo es requerido");
-            return;
+            labelErrorTituloTask.setVisibility(View.VISIBLE);
+        } else {
+            labelErrorTituloTask.setVisibility(View.GONE);
         }
 
         if (taskDescription.isEmpty()){
-            textInputDescripcionTask.setError("Este campo es requerido");
+            labelErrorDescripcionTask.setVisibility(View.VISIBLE);
+        } else {
+            labelErrorDescripcionTask.setVisibility(View.GONE);
+        }
+
+        if (taskName.isEmpty() || taskDescription.isEmpty()) {
             return;
         }
 

@@ -36,9 +36,18 @@
             android:hint="Titulo de la tarea"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/LabelErrorTituloTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layoutTextInputNombreTask"
+        android:textColor="@color/Red"
+        android:visibility="gone"
+        android:text="Este campo no puede quedar vacío"/>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutTextInputDescriptionTask"
-        app:layout_constraintTop_toBottomOf="@id/layoutTextInputNombreTask"
+        app:layout_constraintTop_toBottomOf="@+id/LabelErrorTituloTask"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -54,10 +63,19 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/labelTaskState"
+        android:id="@+id/LabelErrorDescriptionTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/layoutTextInputDescriptionTask"
+        android:textColor="@color/Red"
+        android:visibility="gone"
+        android:text="Este campo no puede quedar vacío"/>
+
+    <TextView
+        android:id="@+id/labelTaskState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/LabelErrorDescriptionTask"
         android:layout_marginTop="10dp"
         android:textSize="18sp"
         android:text="Estado de la tarea"/>
